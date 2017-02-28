@@ -26,7 +26,7 @@ var Main = React.createClass({
       helpers.runQuery(this.state.searchTerm, this.state.searchStartYear, this.state.searchEndYear).then(function(data) {
         if (data !== this.state.results) {
           console.log(data);
-          this.setState({ results: data });
+          this.setState({ results: data.snippet });
         }
         // This code is necessary to bind the keyword "this" when we say this.setState
         // to actually mean the component itself and not the runQuery function.

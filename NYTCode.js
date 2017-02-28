@@ -10,7 +10,7 @@ var numResults 	= 0;
 var startYear 	= 0;
 var endYear		= 0;
 
-// Based on the queryTerm we will create a queryURL 
+// Based on the queryTerm we will create a queryURL
 var queryURLBase = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + authKey + "&q=";
 
 // Array to hold the various article info
@@ -24,7 +24,7 @@ var articleCounter = 0;
 function runQuery(numArticles, queryURL){
 
 	// The AJAX function uses the URL and Gets the JSON data associated with it. The data then gets stored in the variable called: "NYTData"
-	$.ajax({url: queryURL, method: "GET"}) 
+	$.ajax({url: queryURL, method: "GET"})
 		.done(function(NYTData) {
 
 			// Here we are logging the URL so we have access to it for troubleshooting
@@ -53,11 +53,11 @@ function runQuery(numArticles, queryURL){
 					if(NYTData.response.docs[i].headline != "null")
 					{
 						$("#articleWell-"+ articleCounter).append('<h3 class="articleHeadline"><span class="label label-primary">' + articleCounter + '</span><strong>   ' + NYTData.response.docs[i].headline.main + "</strong></h3>");
-						
+
 						// Log the first article's Headline to console.
 						console.log(NYTData.response.docs[i].headline.main);
 					}
-					
+
 					// If the article has a Byline include the headline in the HTML
 					if( NYTData.response.docs[i].byline && NYTData.response.docs[i].byline.hasOwnProperty("original"))
 					{
@@ -75,7 +75,7 @@ function runQuery(numArticles, queryURL){
 					// Log the remaining fields to console as well
 					console.log(NYTData.response.docs[i].pub_date);
 					console.log(NYTData.response.docs[i].section_name);
-					console.log(NYTData.response.docs[i].web_url);	
+					console.log(NYTData.response.docs[i].web_url);
 			}
 		});
 
@@ -83,7 +83,7 @@ function runQuery(numArticles, queryURL){
 
 // METHODS
 // ==========================================================
-	
+
 	// On Click button associated with the Search Button
 	$('#runSearch').on('click', function(){
 
@@ -121,7 +121,7 @@ function runQuery(numArticles, queryURL){
 
 		// This line allows us to take advantage of the HTML "submit" property. This way we can hit enter on the keyboard and it registers the search (in addition to clicks).
 		return false;
-	});	
+	});
 
 // This button clears the top articles section
 $('#clearAll').on('click', function(){

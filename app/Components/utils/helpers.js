@@ -9,7 +9,7 @@ var helpers = {
 
   runQuery: function(qTerm, qstartYear, qendYear) {
 
-    console.log(location);
+
 
     // Figure out the geolocation
     var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" +
@@ -18,7 +18,7 @@ var helpers = {
     return axios.get(queryURL).then(function(response) {
 
       console.log(response);
-      return response;
+      return response.data.response.docs[0];
     });
   }
 };

@@ -57,7 +57,7 @@ var Form = React.createClass({
                 type="text"
                 value={this.state.term}
                 className="form-control"
-                id="searchTerm"
+                id="term"
                 onChange={this.handleChange}
                 required
               />
@@ -69,7 +69,7 @@ var Form = React.createClass({
                <input
                   type="text"
                   className="form-control"
-                  id="searchStartYear"
+                  id="startYear"
                   value={this.state.startYear}
                   onChange={this.handleChange}
                />
@@ -80,7 +80,7 @@ var Form = React.createClass({
                <input
                 type="text"
                 className="form-control"
-                id="searchStartYear"
+                id="endYear"
                 value={this.state.endYear}
                 onChange={this.handleChange}
                />
